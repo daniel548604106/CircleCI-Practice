@@ -12,10 +12,6 @@ jobs:
       - run: echo "npm install"
       - run: npm run install
       - run: CI=true npm run build
-  hi:
-    docker:
-      - image: cimg/node:16.4.1
-      - run: 'Hi there'
   test:
     docker:
       - image: cimg/node:16.4.1
@@ -27,10 +23,8 @@ workflows:
   build_test_and_lint:
     jobs:
       - build
-      - hi
-      - test:
-          requires: 
-          - hi
+      - test
+         
       
  
      
