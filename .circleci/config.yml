@@ -10,7 +10,7 @@ jobs:
     steps: 
       - checkout
       - run: echo "npm install"
-      - run: npm run install
+      - run: npm install
       - run: CI=true npm run build
   test:
     docker:
